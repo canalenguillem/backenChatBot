@@ -5,14 +5,32 @@ from context import reset_context,update_context,load_context
 from chatgpt import chat_gpt_response,transcribe_audio
 from text_to_speech import convert_text_to_speech
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 app=FastAPI()
+
+# CORS - Origins
+origins = [
+    "http://localhost:5173",
+]
+
+# CORS - Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 def read_root():
     return {"Hola":"Alumno"}
 
 @app.post("/reset/")
-def reset(my_context="Quiero que hables y me contestes como un pirata del caribe, usar un máximo de 30 palabras y termina siempre con una pregunta"):
+def reset(my_context="Toma el papel de un profesor nativo en inglés, tienes una charla con un alumno al que tienes que responder y darle algunas recomandaciones de mejora, responde siempre en inglés y con una pregunta sobre el tema para seguir la conversación de forma fluída"):
     reset_context(my_context)
     return {"message":"reseted context"}
 

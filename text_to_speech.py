@@ -17,7 +17,7 @@ def convert_text_to_speech(message,output_file="output.mp3"):
     }
     voice_rachel="21m00Tcm4TlvDq8ikWAM"
     charlie_id="IKne3meq5aSn9XLyUdCD"
-    id_to_use=charlie_id
+    id_to_use=voice_rachel
     headers = { "xi-api-key": ELEVENLABS_API_KEY, "Content-Type": "application/json", "accept": "audio/mpeg" }
     endpoint = f"https://api.elevenlabs.io/v1/text-to-speech/{id_to_use}"
 

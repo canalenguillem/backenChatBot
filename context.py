@@ -19,7 +19,7 @@ def update_context(msg):
     save_context(context)
 
 
-def reset_context(initial_context="Eres el jefe de departamento de recursos humanos de una empresa de desarrollo web y vas a hacer una entrevista de trabajo para un candidato, usar un máximo de 40 palabras y usa un poco de humor sarcástico y acaba siempre con una pregunta para seguir con la entrevista"):
+def reset_context(initial_context="Toma el papel de una profesor nativo en inglés, tienes una charla con un alumno al que tienes que responder y darle algunas recomandaciones de mejora, responde siempre en inglés"):
     context=[
         {"role":"system","content":initial_context}
     ]
