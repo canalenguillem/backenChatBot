@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+fastapi[all]
+openai
+gtts
+python-decouple
+python-telegram-bot

@@ -80,7 +80,9 @@ async def post_audio(file: UploadFile = File(...)):
     print(f"respuesta {respuesta}")
     return {"response":respuesta}
 
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
 

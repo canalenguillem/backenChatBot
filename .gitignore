@@ -103,3 +103,4 @@ Thumbs.db
 docker-compose.override.yml
 *.mp3
 user_contexts.json
+context.json
