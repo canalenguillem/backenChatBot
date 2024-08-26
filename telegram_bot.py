@@ -14,8 +14,15 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def reset(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_message = update.message.text
-    reset_context(initial_context=user_message)
-    await update.message.reply_text('Contexto reseteado empecemos de nuevo')
+    # Eliminar el comando '/reset' y cualquier espacio que lo siga
+    new_context = user_message.replace('/reset', '').strip()
+
+    if new_context:
+        reset_context(initial_context=new_context)
+        await update.message.reply_text('Contexto reseteado empecemos de nuevo')
+    else:
+        await update.message.reply_text('Por favor, proporciona un nuevo contexto después de /reset.')
+
 
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
