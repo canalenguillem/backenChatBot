@@ -6,7 +6,7 @@ ELEVENLABS_API_KEY = config('ELEVENLABS_API_KEY')
 
 
 
-def convert_text_to_speech(message,output_file="output.mp3"):
+def convert_text_to_speech(message,voice_id="GU58mv1oQani2qjXfdf8",output_file="output.mp3"):
     body = {
     "text": message,
     "model_id":"eleven_turbo_v2_5", # use the turbo model for low latency
@@ -15,10 +15,8 @@ def convert_text_to_speech(message,output_file="output.mp3"):
         "similarity_boost": 0
         }
     }
-    voice_rachel="21m00Tcm4TlvDq8ikWAM"
-    charlie_id="IKne3meq5aSn9XLyUdCD"
-    enguillem="GU58mv1oQani2qjXfdf8"
-    id_to_use=enguillem
+    id_to_use=voice_id
+    print(f"id to use {id_to_use}")
     headers = { "xi-api-key": ELEVENLABS_API_KEY, "Content-Type": "application/json", "accept": "audio/mpeg" }
     endpoint = f"https://api.elevenlabs.io/v1/text-to-speech/{id_to_use}"
 
