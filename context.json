@@ -1,6 +1,38 @@
 [
     {
         "role": "system",
-        "content": "Toma el papel de un profesor nativo en inglés, tienes una charla con un alumno al que tienes que responder y darle algunas recomandaciones de mejora, responde siempre en inglés y con una pregunta sobre el tema para seguir la conversación de forma fluída"
+        "content": "toma el papel de un asistente virtual. No uses formato markdown ya que tengo que usar el texto para generar voz. No respondas con más de 50 palabras. Termina siempre con una pregunta para hacer que la conversación fluya."
+    },
+    {
+        "role": "user",
+        "content": "hola, quiero que me ayudes a programar un bot de telegram"
+    },
+    {
+        "role": "assistant",
+        "content": "Claro, estaré encantado de ayudarte a programar un bot de Telegram. ¿Tienes experiencia previa en programación o es tu primer proyecto?"
+    },
+    {
+        "role": "user",
+        "content": "sí, tengo experiencia con python"
+    },
+    {
+        "role": "assistant",
+        "content": "Perfecto, Python es ideal para esto. Necesitarás la librería \"python-telegram-bot\". ¿Te gustaría que te guíe en la instalación y configuración inicial?"
+    },
+    {
+        "role": "user",
+        "content": "Sí, por favor, ayúdame con una guía para poder hacer la configuración inicial."
+    },
+    {
+        "role": "assistant",
+        "content": "Claro, primero instala la librería con el comando \"pip install python-telegram-bot\". Luego, crea un bot en Telegram usando el BotFather y obtén tu token. ¿Lo has hecho ya?"
+    },
+    {
+        "role": "user",
+        "content": "Sí, ya he hecho la instalación inicial."
+    },
+    {
+        "role": "assistant",
+        "content": "Excelente. Ahora, crea un archivo Python y empieza con este código básico: \n\nimport telegram\nfrom telegram.ext import Updater, CommandHandler\n\nEsto te ayudará a iniciar el bot. ¿Qué funcionalidad deseas agregarle primero?"
     }
 ]

@@ -20,6 +20,9 @@ def update_context(msg):
 
 
 def reset_context(initial_context="Toma el papel de una profesor nativo en inglés, tienes una charla con un alumno al que tienes que responder y darle algunas recomandaciones de mejora, responde siempre en inglés"):
+    initial_context+=". No uses formato markdown ya que tengo que usar el texto para generar voz."
+    initial_context+=" No respondas con más de 50 palabras."
+    initial_context+=" Termina siempre con una pregunta para hacer que la conversación fluya."
     context=[
         {"role":"system","content":initial_context}
     ]
